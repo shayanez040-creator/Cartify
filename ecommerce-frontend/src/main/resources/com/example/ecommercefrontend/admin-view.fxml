@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.ecommercefrontend.AdminController">
+
+    <!-- TOP BAR -->
+    <top>
+        <Label text="Admin Panel"
+               BorderPane.alignment="CENTER"
+               style="-fx-font-size: 20px; -fx-padding: 10;" />
+    </top>
+
+    <!-- CENTER TABLE -->
+    <center>
+        <TableView fx:id="table">
+
+            <columns>
+                <TableColumn fx:id="idCol" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="200"/>
+                <TableColumn fx:id="priceCol" text="Price" prefWidth="120"/>
+            </columns>
+
+        </TableView>
+    </center>
+
+    <!-- BOTTOM -->
+    <bottom>
+        <HBox spacing="10"
+              alignment="CENTER_RIGHT"
+              style="-fx-padding: 10;">
+
+            <Button text="Delete Product"
+                    onAction="#deleteProduct"/>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

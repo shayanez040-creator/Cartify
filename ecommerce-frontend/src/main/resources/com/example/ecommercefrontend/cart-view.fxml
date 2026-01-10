@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.ecommercefrontend.CartController"
+      spacing="10">
+
+    <!-- ✅ CORRECT padding -->
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Label
+            text="Your Cart"
+            style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <ListView
+            fx:id="cartListView"
+            prefHeight="250"/>
+
+    <Label
+            fx:id="totalLabel"
+            text="Total: Rs. 0.0"
+            style="-fx-font-size: 16px;"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button
+                text="Checkout"
+                prefWidth="120"
+                onAction="#checkout"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.ecommercefrontend.ProductController"
+        styleClass="root">
+
+    <!-- ================= TOP BAR ================= -->
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="12"
+              styleClass="top-bar">
+
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <!-- LOGO -->
+            <ImageView fitWidth="52"
+                       fitHeight="52"
+                       preserveRatio="true"
+                       styleClass="cartify-logo">
+                <image>
+                    <Image url="@images/cartify-logo.jpg"/>
+                </image>
+            </ImageView>
+
+            <!-- STORE NAME -->
+            <Label text="Cartify"
+                   styleClass="store-title"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- PAGE TITLE -->
+            <Label text="Product List"
+                   styleClass="page-title"/>
+        </HBox>
+    </top>
+
+    <!-- ================= PRODUCT GRID ================= -->
+    <center>
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED"
+                    styleClass="content-scroll">
+
+            <content>
+                <TilePane fx:id="productGrid"
+                          hgap="24"
+                          vgap="24"
+                          prefTileWidth="260"
+                          prefTileHeight="350"
+                          alignment="TOP_CENTER">
+
+                    <padding>
+                        <Insets top="24" right="24" bottom="24" left="24"/>
+                    </padding>
+
+                </TilePane>
+            </content>
+
+        </ScrollPane>
+    </center>
+
+    <!-- ================= BOTTOM BAR ================= -->
+    <bottom>
+        <HBox alignment="CENTER_RIGHT"
+              styleClass="bottom-bar">
+
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <Button text="View Cart"
+                    styleClass="primary-button"
+                    onAction="#openCart"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.ecommercefrontend.LoginController"
+           styleClass="root">
+
+    <VBox alignment="CENTER"
+          spacing="24"
+          maxWidth="360">
+
+        <!-- LOGO -->
+        <ImageView fitWidth="70"
+                   fitHeight="70"
+                   preserveRatio="true">
+            <image>
+                <Image url="@images/cartify-logo.jpg"/>
+            </image>
+        </ImageView>
+
+        <Label text="Cartify"
+               style="-fx-font-size: 30px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+        <Label text="Shop Smart. Live Better."
+               style="-fx-text-fill: #9ca3af;"/>
+
+        <!-- LOGIN CARD -->
+        <VBox spacing="16"
+              alignment="CENTER"
+              styleClass="login-card">
+
+            <Label text="Welcome Back"
+                   style="-fx-text-fill: #cbd5e1;"/>
+
+            <TextField fx:id="usernameField"
+                       promptText="Username"
+                       styleClass="input-field"/>
+
+            <PasswordField fx:id="passwordField"
+                           promptText="Password"
+                           styleClass="input-field"/>
+
+            <Button text="Login"
+                    onAction="#handleLogin"
+                    styleClass="primary-button"/>
+
+            <!-- REGISTER LINK -->
+            <HBox spacing="6" alignment="CENTER">
+                <Label text="Don't have an account?"
+                       style="-fx-text-fill: #9ca3af;"/>
+                <Hyperlink text="Register"
+                           onAction="#openRegister"
+                           style="-fx-text-fill: #60a5fa;"/>
+            </HBox>
+
+            <Label fx:id="messageLabel"
+                   styleClass="error-text"/>
+        </VBox>
+
+    </VBox>
+</StackPane>
