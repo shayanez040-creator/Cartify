@@ -2,21 +2,26 @@ package com.example.ecommercefrontend;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBUtil {
 
     private static final String URL =
             "jdbc:mysql://localhost:3306/ecommerce?useSSL=false&serverTimezone=UTC";
 
-    private static final String USER = "root";   // change if needed
-    private static final String PASS = "root";       // change if you set password
+    private static final String USER = "root";
+    private static final String PASS = "root"; // change if needed
 
-    public static Connection getConnection() {
+    static {
         try {
-            return DriverManager.getConnection(URL, USER, PASS);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("✅ MySQL Driver Loaded");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("❌ MySQL Driver Not Found", e);
         }
+    }
+
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASS);
     }
 }
